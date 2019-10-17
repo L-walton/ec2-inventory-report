@@ -74,6 +74,42 @@
                     "memoryGiB": 60.0,
                     "storageGB": "ebsonly"
                 },
+                "c5.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
+                    "storageGB": "ebsonly"
+                },
                 "cc2.8xlarge": {
                     "CPU": 32,
                     "ECU": 88.0,
@@ -181,6 +217,12 @@
                     "ECU": 13.0,
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
+                },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
                 },
                 "i3.2xlarge": {
                     "CPU": 8,
@@ -306,6 +348,42 @@
                     "CPU": 64,
                     "ECU": 188.0,
                     "memoryGiB": 256.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
                 },
                 "p2.xlarge": {
@@ -536,6 +614,42 @@
                     "CPU": 36,
                     "ECU": 132.0,
                     "memoryGiB": 60.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
                     "storageGB": "ebsonly"
                 },
                 "d2.xlarge": {
@@ -1930,6 +2044,12 @@
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
                 },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
+                },
                 "i3.2xlarge": {
                     "CPU": 8,
                     "ECU": 27.0,
@@ -2340,6 +2460,42 @@
                     "memoryGiB": 144.0,
                     "storageGB": "ebsonly"
                 },
+                "c5d.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "1 x 50"
+                },
+                "c5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 100"
+                },
+                "c5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 200"
+                },
+                "c5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 400"
+                },
+                "c5d.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "1 x 900"
+                },
+                "c5d.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
+                    "storageGB": "1 x 1800"
+                },
                 "d2.xlarge": {
                     "CPU": 4,
                     "ECU": 14.0,
@@ -2471,6 +2627,42 @@
                     "ECU": 345.0,
                     "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
+                },
+                "m5d.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 75"
+                },
+                "m5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 150"
+                },
+                "m5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 300"
+                },
+                "m5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "2 x 300"
+                },
+                "m5d.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "2 x 900"
+                },
+                "m5d.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
+                    "storageGB": "4 x 900"
                 },
                 "r4.large": {
                     "CPU": 2,
@@ -2750,6 +2942,12 @@
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
                 },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
+                },
                 "i3.2xlarge": {
                     "CPU": 8,
                     "ECU": 27.0,
@@ -3007,6 +3205,42 @@
                     "ECU": 349.0,
                     "memoryGiB": 1952.0,
                     "storageGB": "2 x 1920 SSD"
+                },
+                "x1e.xlarge": {
+                    "CPU": 4,
+                    "ECU": 12.0,
+                    "memoryGiB": 122.0,
+                    "storageGB": "1 x 120 SSD"
+                },
+                "x1e.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 23.0,
+                    "memoryGiB": 244.0,
+                    "storageGB": "1 x 240 SSD"
+                },
+                "x1e.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 47.0,
+                    "memoryGiB": 488.0,
+                    "storageGB": "1 x 480 SSD"
+                },
+                "x1e.8xlarge": {
+                    "CPU": 32,
+                    "ECU": 91.0,
+                    "memoryGiB": 976.0,
+                    "storageGB": "1 x 960"
+                },
+                "x1e.16xlarge": {
+                    "CPU": 64,
+                    "ECU": 179.0,
+                    "memoryGiB": 1952.0,
+                    "storageGB": "1 x 1920 SSD"
+                },
+                "x1e.32xlarge": {
+                    "CPU": 128,
+                    "ECU": 340.0,
+                    "memoryGiB": 3904.0,
+                    "storageGB": "2 x 1920 SSD"
                 }
             },
             "eu-west-1": {
@@ -3117,6 +3351,42 @@
                     "ECU": 278.0,
                     "memoryGiB": 144.0,
                     "storageGB": "ebsonly"
+                },
+                "c5d.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "1 x 50"
+                },
+                "c5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 100"
+                },
+                "c5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 200"
+                },
+                "c5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 400"
+                },
+                "c5d.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "1 x 900"
+                },
+                "c5d.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
+                    "storageGB": "1 x 1800"
                 },
                 "cc2.8xlarge": {
                     "CPU": 32,
@@ -3261,6 +3531,12 @@
                     "ECU": 13.0,
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
+                },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
                 },
                 "i3.2xlarge": {
                     "CPU": 8,
@@ -3423,6 +3699,42 @@
                     "ECU": 345.0,
                     "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
+                },
+                "m5d.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 75"
+                },
+                "m5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 150"
+                },
+                "m5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 300"
+                },
+                "m5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "2 x 300"
+                },
+                "m5d.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "2 x 900"
+                },
+                "m5d.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
+                    "storageGB": "4 x 900"
                 },
                 "p2.xlarge": {
                     "CPU": 4,
@@ -3725,6 +4037,12 @@
                     "ECU": 13.0,
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
+                },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
                 },
                 "i3.2xlarge": {
                     "CPU": 8,
@@ -4384,6 +4702,42 @@
                     "memoryGiB": 256.0,
                     "storageGB": "ebsonly"
                 },
+                "m5.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
+                    "storageGB": "ebsonly"
+                },
                 "r3.large": {
                     "CPU": 2,
                     "ECU": 6.5,
@@ -4620,6 +4974,42 @@
                     "memoryGiB": 144.0,
                     "storageGB": "ebsonly"
                 },
+                "c5d.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "1 x 50"
+                },
+                "c5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 100"
+                },
+                "c5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 200"
+                },
+                "c5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 400"
+                },
+                "c5d.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "1 x 900"
+                },
+                "c5d.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
+                    "storageGB": "1 x 1800"
+                },
                 "cc2.8xlarge": {
                     "CPU": 32,
                     "ECU": 88.0,
@@ -4763,6 +5153,12 @@
                     "ECU": 13.0,
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
+                },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
                 },
                 "i3.2xlarge": {
                     "CPU": 8,
@@ -4925,6 +5321,42 @@
                     "ECU": 345.0,
                     "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
+                },
+                "m5d.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 75"
+                },
+                "m5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 150"
+                },
+                "m5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 300"
+                },
+                "m5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "2 x 300"
+                },
+                "m5d.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "2 x 900"
+                },
+                "m5d.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
+                    "storageGB": "4 x 900"
                 },
                 "p2.xlarge": {
                     "CPU": 4,
@@ -5192,6 +5624,42 @@
                     "memoryGiB": 144.0,
                     "storageGB": "ebsonly"
                 },
+                "c5d.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "1 x 50"
+                },
+                "c5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 100"
+                },
+                "c5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 200"
+                },
+                "c5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 400"
+                },
+                "c5d.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "1 x 900"
+                },
+                "c5d.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
+                    "storageGB": "1 x 1800"
+                },
                 "d2.xlarge": {
                     "CPU": 4,
                     "ECU": 14.0,
@@ -5294,6 +5762,12 @@
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
                 },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
+                },
                 "i3.2xlarge": {
                     "CPU": 8,
                     "ECU": 27.0,
@@ -5389,6 +5863,42 @@
                     "ECU": 345.0,
                     "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
+                },
+                "m5d.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 75"
+                },
+                "m5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 150"
+                },
+                "m5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 300"
+                },
+                "m5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "2 x 300"
+                },
+                "m5d.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "2 x 900"
+                },
+                "m5d.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
+                    "storageGB": "4 x 900"
                 },
                 "p2.xlarge": {
                     "CPU": 4,
@@ -5620,6 +6130,42 @@
                     "memoryGiB": 60.0,
                     "storageGB": "ebsonly"
                 },
+                "c5.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "ebsonly"
+                },
+                "c5.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
+                    "storageGB": "ebsonly"
+                },
                 "cc2.8xlarge": {
                     "CPU": 32,
                     "ECU": 88.0,
@@ -5721,6 +6267,12 @@
                     "ECU": 13.0,
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
+                },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
                 },
                 "i3.2xlarge": {
                     "CPU": 8,
@@ -5846,6 +6398,42 @@
                     "CPU": 64,
                     "ECU": 188.0,
                     "memoryGiB": 256.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "ebsonly"
+                },
+                "m5.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
                 },
                 "p2.xlarge": {
@@ -6372,6 +6960,42 @@
                     "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
                 },
+                "m5d.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 75"
+                },
+                "m5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 150"
+                },
+                "m5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 300"
+                },
+                "m5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "2 x 300"
+                },
+                "m5d.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "2 x 900"
+                },
+                "m5d.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
+                    "storageGB": "4 x 900"
+                },
                 "r3.large": {
                     "CPU": 2,
                     "ECU": 6.5,
@@ -6485,8 +7109,14 @@
                     "ECU": 0,
                     "memoryGiB": 32.0,
                     "storageGB": "ebsonly"
-                }
-            },
+                },
+		"m5d.xlarge": {
+		    "CPU": 2,
+		    "ECU": 0,
+		    "memoryGiB": 8.0,
+		    "storageGB": "75 GiB NVMe SSD"
+		}
+	    },
             "us-west-2": {
                 "c1.medium": {
                     "CPU": 2,
@@ -6595,6 +7225,42 @@
                     "ECU": 278.0,
                     "memoryGiB": 144.0,
                     "storageGB": "ebsonly"
+                },
+                "c5d.large": {
+                    "CPU": 2,
+                    "ECU": 8.0,
+                    "memoryGiB": 4.0,
+                    "storageGB": "1 x 50"
+                },
+                "c5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 16.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 100"
+                },
+                "c5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 200"
+                },
+                "c5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 62.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 400"
+                },
+                "c5d.9xlarge": {
+                    "CPU": 36,
+                    "ECU": 139.0,
+                    "memoryGiB": 72.0,
+                    "storageGB": "1 x 900"
+                },
+                "c5d.18xlarge": {
+                    "CPU": 72,
+                    "ECU": 278.0,
+                    "memoryGiB": 144.0,
+                    "storageGB": "1 x 1800"
                 },
                 "cc2.8xlarge": {
                     "CPU": 32,
@@ -6739,6 +7405,12 @@
                     "ECU": 13.0,
                     "memoryGiB": 30.5,
                     "storageGB": "1 x 950 NVMe SSD"
+                },
+                "i3.metal": {
+                    "CPU": 72,
+                    "ECU": 208.0,
+                    "memoryGiB": 512.0,
+                    "storageGB": "8 x 1900 NVMe SSD"
                 },
                 "i3.2xlarge": {
                     "CPU": 8,
@@ -6902,6 +7574,42 @@
                     "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
                 },
+                "m5d.large": {
+                    "CPU": 2,
+                    "ECU": 10.0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "1 x 75"
+                },
+                "m5d.xlarge": {
+                    "CPU": 4,
+                    "ECU": 15.0,
+                    "memoryGiB": 16.0,
+                    "storageGB": "1 x 150"
+                },
+                "m5d.2xlarge": {
+                    "CPU": 8,
+                    "ECU": 31.0,
+                    "memoryGiB": 32.0,
+                    "storageGB": "1 x 300"
+                },
+                "m5d.4xlarge": {
+                    "CPU": 16,
+                    "ECU": 61.0,
+                    "memoryGiB": 64.0,
+                    "storageGB": "2 x 300"
+                },
+                "m5d.12xlarge": {
+                    "CPU": 48,
+                    "ECU": 173.0,
+                    "memoryGiB": 192.0,
+                    "storageGB": "2 x 900"
+                },
+                "m5d.24xlarge": {
+                    "CPU": 96,
+                    "ECU": 345.0,
+                    "memoryGiB": 384.0,
+                    "storageGB": "4 x 900"
+                },
                 "p2.xlarge": {
                     "CPU": 4,
                     "ECU": 12.0,
@@ -7064,7 +7772,49 @@
                     "memoryGiB": 1952.0,
                     "storageGB": "2 x 1920 SSD"
                 },
-                "x1e.xlarge": {
+		"t3.nano": {
+		    "CPU": 2,
+		    "ECU": 6,
+		    "memoryGiB": 0.5,
+		    "storageGB": "EBS"
+		},
+		"t3.micro": {
+		    "CPU": 2,
+		    "ECU": 12,
+		    "memoryGiB": 1.0,
+		    "storageGB": "EBS"
+		},
+		"t3.small": {
+		    "CPU": 2,
+		    "ECU": 24,
+		    "memoryGiB": 2.0,
+		    "storageGB": "EBS"
+		},
+		"t3.medium": {
+		    "CPU": 2,
+		    "ECU": 4,
+		    "memoryGiB": 4.0,
+		    "storageGB": "EBS"
+		},
+		"t3.large": {
+		    "CPU": 2,
+		    "ECU": 36,
+		    "memoryGiB": 8.0,
+		    "storageGB": "EBS"
+		},
+		"t3.xlarge": {
+		    "CPU": 4,
+		    "ECU": 96,
+		    "memoryGiB": 16.0,
+		    "storageGB": "EBS"
+		},
+		"t3.2xlarge": {
+		    "CPU": 8,
+		    "ECU": 192,
+		    "memoryGiB": 32.0,
+		    "storageGB": "EBS"
+		},
+		"x1e.xlarge": {
                     "CPU": 4,
                     "ECU": 12.0,
                     "memoryGiB": 122.0,
@@ -7116,6 +7866,12 @@
                 "c4.2xlarge": 0.504,
                 "c4.4xlarge": 1.008,
                 "c4.8xlarge": 2.016,
+                "c5.large": 0.107,
+                "c5.xlarge": 0.214,
+                "c5.2xlarge": 0.428,
+                "c5.4xlarge": 0.856,
+                "c5.9xlarge": 1.926,
+                "c5.18xlarge": 3.852,
                 "cc2.8xlarge": 2.349,
                 "cr1.8xlarge": 4.105,
                 "d2.xlarge": 0.844,
@@ -7134,6 +7890,7 @@
                 "i2.8xlarge": 8.004,
                 "i3.large": 0.183,
                 "i3.xlarge": 0.366,
+                "i3.metal": 5.856,
                 "i3.2xlarge": 0.732,
                 "i3.4xlarge": 1.464,
                 "i3.8xlarge": 2.928,
@@ -7155,6 +7912,12 @@
                 "m4.4xlarge": 1.032,
                 "m4.10xlarge": 2.58,
                 "m4.16xlarge": 4.128,
+                "m5.large": 0.124,
+                "m5.xlarge": 0.248,
+                "m5.2xlarge": 0.496,
+                "m5.4xlarge": 0.992,
+                "m5.12xlarge": 2.976,
+                "m5.24xlarge": 5.952,
                 "p2.xlarge": 1.542,
                 "p2.8xlarge": 12.336,
                 "p2.16xlarge": 24.672,
@@ -7195,6 +7958,12 @@
                 "c4.2xlarge": 0.454,
                 "c4.4xlarge": 0.907,
                 "c4.8xlarge": 1.815,
+                "c5.large": 0.096,
+                "c5.xlarge": 0.192,
+                "c5.2xlarge": 0.384,
+                "c5.4xlarge": 0.768,
+                "c5.9xlarge": 1.728,
+                "c5.18xlarge": 3.456,
                 "d2.xlarge": 0.844,
                 "d2.2xlarge": 1.688,
                 "d2.4xlarge": 3.376,
@@ -7432,6 +8201,7 @@
                 "i2.8xlarge": 8.14,
                 "i3.large": 0.187,
                 "i3.xlarge": 0.374,
+                "i3.metal": 5.984,
                 "i3.2xlarge": 0.748,
                 "i3.4xlarge": 1.496,
                 "i3.8xlarge": 2.992,
@@ -7502,6 +8272,12 @@
                 "c5.4xlarge": 0.744,
                 "c5.9xlarge": 1.674,
                 "c5.18xlarge": 3.348,
+                "c5d.large": 0.106,
+                "c5d.xlarge": 0.212,
+                "c5d.2xlarge": 0.424,
+                "c5d.4xlarge": 0.848,
+                "c5d.9xlarge": 1.908,
+                "c5d.18xlarge": 3.816,
                 "d2.xlarge": 0.759,
                 "d2.2xlarge": 1.518,
                 "d2.4xlarge": 3.036,
@@ -7524,6 +8300,12 @@
                 "m5.4xlarge": 0.856,
                 "m5.12xlarge": 2.568,
                 "m5.24xlarge": 5.136,
+                "m5d.large": 0.126,
+                "m5d.xlarge": 0.252,
+                "m5d.2xlarge": 0.504,
+                "m5d.4xlarge": 1.008,
+                "m5d.12xlarge": 3.024,
+                "m5d.24xlarge": 6.048,
                 "r4.large": 0.146,
                 "r4.xlarge": 0.292,
                 "r4.2xlarge": 0.584,
@@ -7572,6 +8354,7 @@
                 "i2.8xlarge": 8.102,
                 "i3.large": 0.186,
                 "i3.xlarge": 0.372,
+                "i3.metal": 5.952,
                 "i3.2xlarge": 0.744,
                 "i3.4xlarge": 1.488,
                 "i3.8xlarge": 2.976,
@@ -7614,7 +8397,13 @@
                 "t2.nano": 0.0067,
                 "t2.2xlarge": 0.4288,
                 "x1.16xlarge": 9.337,
-                "x1.32xlarge": 18.674
+                "x1.32xlarge": 18.674,
+                "x1e.xlarge": 1.167,
+                "x1e.2xlarge": 2.334,
+                "x1e.4xlarge": 4.668,
+                "x1e.8xlarge": 9.336,
+                "x1e.16xlarge": 18.672,
+                "x1e.32xlarge": 37.344
             },
             "eu-west-1": {
                 "c1.medium": 0.148,
@@ -7635,6 +8424,12 @@
                 "c5.4xlarge": 0.768,
                 "c5.9xlarge": 1.728,
                 "c5.18xlarge": 3.456,
+                "c5d.large": 0.109,
+                "c5d.xlarge": 0.218,
+                "c5d.2xlarge": 0.436,
+                "c5d.4xlarge": 0.872,
+                "c5d.9xlarge": 1.962,
+                "c5d.18xlarge": 3.924,
                 "cc2.8xlarge": 2.25,
                 "cr1.8xlarge": 3.75,
                 "d2.xlarge": 0.735,
@@ -7648,10 +8443,10 @@
                 "g3.4xlarge": 1.21,
                 "g3.8xlarge": 2.42,
                 "g3.16xlarge": 4.84,
-                "h1.2xlarge": 0.611,
-                "h1.4xlarge": 1.222,
-                "h1.8xlarge": 2.444,
-                "h1.16xlarge": 4.888,
+                "h1.2xlarge": 0.519,
+                "h1.4xlarge": 1.038,
+                "h1.8xlarge": 2.076,
+                "h1.16xlarge": 4.152,
                 "hs1.8xlarge": 4.9,
                 "i2.xlarge": 0.938,
                 "i2.2xlarge": 1.876,
@@ -7659,6 +8454,7 @@
                 "i2.8xlarge": 7.502,
                 "i3.large": 0.172,
                 "i3.xlarge": 0.344,
+                "i3.metal": 5.504,
                 "i3.2xlarge": 0.688,
                 "i3.4xlarge": 1.376,
                 "i3.8xlarge": 2.752,
@@ -7686,6 +8482,12 @@
                 "m5.4xlarge": 0.856,
                 "m5.12xlarge": 2.568,
                 "m5.24xlarge": 5.136,
+                "m5d.large": 0.126,
+                "m5d.xlarge": 0.252,
+                "m5d.2xlarge": 0.504,
+                "m5d.4xlarge": 1.008,
+                "m5d.12xlarge": 3.024,
+                "m5d.24xlarge": 6.048,
                 "p2.xlarge": 0.972,
                 "p2.8xlarge": 7.776,
                 "p2.16xlarge": 15.552,
@@ -7738,6 +8540,7 @@
                 "d2.8xlarge": 6.174,
                 "i3.large": 0.181,
                 "i3.xlarge": 0.362,
+                "i3.metal": 5.792,
                 "i3.2xlarge": 0.724,
                 "i3.4xlarge": 1.448,
                 "i3.8xlarge": 2.896,
@@ -7851,6 +8654,12 @@
                 "m4.4xlarge": 1.272,
                 "m4.10xlarge": 3.18,
                 "m4.16xlarge": 5.088,
+                "m5.large": 0.153,
+                "m5.xlarge": 0.306,
+                "m5.2xlarge": 0.612,
+                "m5.4xlarge": 1.224,
+                "m5.12xlarge": 3.672,
+                "m5.24xlarge": 7.344,
                 "r3.large": 0.35,
                 "r3.xlarge": 0.7,
                 "r3.2xlarge": 1.399,
@@ -7892,6 +8701,12 @@
                 "c5.4xlarge": 0.68,
                 "c5.9xlarge": 1.53,
                 "c5.18xlarge": 3.06,
+                "c5d.large": 0.096,
+                "c5d.xlarge": 0.192,
+                "c5d.2xlarge": 0.384,
+                "c5d.4xlarge": 0.768,
+                "c5d.9xlarge": 1.728,
+                "c5d.18xlarge": 3.456,
                 "cc2.8xlarge": 2.0,
                 "cr1.8xlarge": 3.5,
                 "d2.xlarge": 0.69,
@@ -7905,10 +8720,10 @@
                 "g3.4xlarge": 1.14,
                 "g3.8xlarge": 2.28,
                 "g3.16xlarge": 4.56,
-                "h1.2xlarge": 0.55,
-                "h1.4xlarge": 1.1,
-                "h1.8xlarge": 2.2,
-                "h1.16xlarge": 4.4,
+                "h1.2xlarge": 0.468,
+                "h1.4xlarge": 0.936,
+                "h1.8xlarge": 1.872,
+                "h1.16xlarge": 3.744,
                 "hs1.8xlarge": 4.6,
                 "i2.xlarge": 0.853,
                 "i2.2xlarge": 1.705,
@@ -7916,6 +8731,7 @@
                 "i2.8xlarge": 6.82,
                 "i3.large": 0.156,
                 "i3.xlarge": 0.312,
+                "i3.metal": 4.992,
                 "i3.2xlarge": 0.624,
                 "i3.4xlarge": 1.248,
                 "i3.8xlarge": 2.496,
@@ -7943,6 +8759,12 @@
                 "m5.4xlarge": 0.768,
                 "m5.12xlarge": 2.304,
                 "m5.24xlarge": 4.608,
+                "m5d.large": 0.113,
+                "m5d.xlarge": 0.226,
+                "m5d.2xlarge": 0.452,
+                "m5d.4xlarge": 0.904,
+                "m5d.12xlarge": 2.712,
+                "m5d.24xlarge": 5.424,
                 "p2.xlarge": 0.9,
                 "p2.8xlarge": 7.2,
                 "p2.16xlarge": 14.4,
@@ -7989,6 +8811,12 @@
                 "c5.4xlarge": 0.68,
                 "c5.9xlarge": 1.53,
                 "c5.18xlarge": 3.06,
+                "c5d.large": 0.096,
+                "c5d.xlarge": 0.192,
+                "c5d.2xlarge": 0.384,
+                "c5d.4xlarge": 0.768,
+                "c5d.9xlarge": 1.728,
+                "c5d.18xlarge": 3.456,
                 "d2.xlarge": 0.69,
                 "d2.2xlarge": 1.38,
                 "d2.4xlarge": 2.76,
@@ -7996,16 +8824,17 @@
                 "g3.4xlarge": 1.14,
                 "g3.8xlarge": 2.28,
                 "g3.16xlarge": 4.56,
-                "h1.2xlarge": 0.55,
-                "h1.4xlarge": 1.1,
-                "h1.8xlarge": 2.2,
-                "h1.16xlarge": 4.4,
+                "h1.2xlarge": 0.468,
+                "h1.4xlarge": 0.936,
+                "h1.8xlarge": 1.872,
+                "h1.16xlarge": 3.744,
                 "i2.xlarge": 0.853,
                 "i2.2xlarge": 1.705,
                 "i2.4xlarge": 3.41,
                 "i2.8xlarge": 6.82,
                 "i3.large": 0.156,
                 "i3.xlarge": 0.312,
+                "i3.metal": 4.992,
                 "i3.2xlarge": 0.624,
                 "i3.4xlarge": 1.248,
                 "i3.8xlarge": 2.496,
@@ -8022,6 +8851,12 @@
                 "m5.4xlarge": 0.768,
                 "m5.12xlarge": 2.304,
                 "m5.24xlarge": 4.608,
+                "m5d.large": 0.113,
+                "m5d.xlarge": 0.226,
+                "m5d.2xlarge": 0.452,
+                "m5d.4xlarge": 0.904,
+                "m5d.12xlarge": 2.712,
+                "m5d.24xlarge": 5.424,
                 "p2.xlarge": 0.9,
                 "p2.8xlarge": 7.2,
                 "p2.16xlarge": 14.4,
@@ -8062,6 +8897,12 @@
                 "c4.2xlarge": 0.479,
                 "c4.4xlarge": 0.958,
                 "c4.8xlarge": 1.915,
+                "c5.large": 0.102,
+                "c5.xlarge": 0.204,
+                "c5.2xlarge": 0.408,
+                "c5.4xlarge": 0.816,
+                "c5.9xlarge": 1.836,
+                "c5.18xlarge": 3.672,
                 "cc2.8xlarge": 2.25,
                 "d2.xlarge": 0.828,
                 "d2.2xlarge": 1.656,
@@ -8079,6 +8920,7 @@
                 "i2.8xlarge": 8.184,
                 "i3.large": 0.188,
                 "i3.xlarge": 0.376,
+                "i3.metal": 6.016,
                 "i3.2xlarge": 0.752,
                 "i3.4xlarge": 1.504,
                 "i3.8xlarge": 3.008,
@@ -8100,6 +8942,12 @@
                 "m4.4xlarge": 1.008,
                 "m4.10xlarge": 2.52,
                 "m4.16xlarge": 4.032,
+                "m5.large": 0.121,
+                "m5.xlarge": 0.242,
+                "m5.2xlarge": 0.484,
+                "m5.4xlarge": 0.968,
+                "m5.12xlarge": 2.904,
+                "m5.24xlarge": 5.808,
                 "p2.xlarge": 1.08,
                 "p2.8xlarge": 8.64,
                 "p2.16xlarge": 17.28,
@@ -8207,7 +9055,8 @@
                 "t2.large": 0.1104,
                 "t2.xlarge": 0.2208,
                 "t2.nano": 0.0069,
-                "t2.2xlarge": 0.4416
+                "t2.2xlarge": 0.4416,
+		"m5d.large": 0.113
             },
             "us-west-2": {
                 "c1.medium": 0.13,
@@ -8228,6 +9077,12 @@
                 "c5.4xlarge": 0.68,
                 "c5.9xlarge": 1.53,
                 "c5.18xlarge": 3.06,
+                "c5d.large": 0.096,
+                "c5d.xlarge": 0.192,
+                "c5d.2xlarge": 0.384,
+                "c5d.4xlarge": 0.768,
+                "c5d.9xlarge": 1.728,
+                "c5d.18xlarge": 3.456,
                 "cc2.8xlarge": 2.0,
                 "cr1.8xlarge": 3.5,
                 "d2.xlarge": 0.69,
@@ -8241,10 +9096,10 @@
                 "g3.4xlarge": 1.14,
                 "g3.8xlarge": 2.28,
                 "g3.16xlarge": 4.56,
-                "h1.2xlarge": 0.55,
-                "h1.4xlarge": 1.1,
-                "h1.8xlarge": 2.2,
-                "h1.16xlarge": 4.4,
+                "h1.2xlarge": 0.468,
+                "h1.4xlarge": 0.936,
+                "h1.8xlarge": 1.872,
+                "h1.16xlarge": 3.744,
                 "hs1.8xlarge": 4.6,
                 "i2.xlarge": 0.853,
                 "i2.2xlarge": 1.705,
@@ -8252,6 +9107,7 @@
                 "i2.8xlarge": 6.82,
                 "i3.large": 0.156,
                 "i3.xlarge": 0.312,
+                "i3.metal": 4.992,
                 "i3.2xlarge": 0.624,
                 "i3.4xlarge": 1.248,
                 "i3.8xlarge": 2.496,
@@ -8279,6 +9135,12 @@
                 "m5.4xlarge": 0.768,
                 "m5.12xlarge": 2.304,
                 "m5.24xlarge": 4.608,
+                "m5d.large": 0.113,
+                "m5d.xlarge": 0.226,
+                "m5d.2xlarge": 0.452,
+                "m5d.4xlarge": 0.904,
+                "m5d.12xlarge": 2.712,
+                "m5d.24xlarge": 5.424,
                 "p2.xlarge": 0.9,
                 "p2.8xlarge": 7.2,
                 "p2.16xlarge": 14.4,
@@ -8304,7 +9166,14 @@
                 "t2.xlarge": 0.1856,
                 "t2.nano": 0.0058,
                 "t2.2xlarge": 0.3712,
-                "x1.16xlarge": 6.669,
+                "t3.nano": 0.0052,
+                "t3.micro": 0.0104,
+		"t3.small": 0.0209,
+		"t3.medium": 0.0418,
+		"t3.large": 0.0835,
+		"t3.xlarge": 0.1670,
+		"t3.2xlarge": 0.3341,
+		"x1.16xlarge": 6.669,
                 "x1.32xlarge": 13.338,
                 "x1e.xlarge": 0.834,
                 "x1e.2xlarge": 1.668,
@@ -8333,5 +9202,5 @@
             "us-gov-west-1"
         ]
     },
-    "updated": 1522828566
+    "updated": 1566423319
 }

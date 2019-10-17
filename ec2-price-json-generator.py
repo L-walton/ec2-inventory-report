@@ -46,13 +46,7 @@ EC2_REGIONS = [
 ]
 
 INSTANCE_SIZES = [
-    'micro',
-    'small',
-    'medium',
-    'large',
-    'xlarge',
-    'x-large',
-    'extra-large'
+    'micro', 'small', 'medium', 'large', 'xlarge', 'x-large', 'extra-large'
 ]
 
 RE_NUMERIC_OTHER = re.compile(r'(?:([0-9]+)|([-A-Z_a-z]+)|([^-0-9A-Z_a-z]+))')
@@ -73,7 +67,8 @@ def scrape_ec2_pricing():
         if re.match('.*?\.json$', url):
             data = response.json()
         elif re.match('.*?\.js$', url):
-            data = response.content
+            #data = response.content
+            data = response.content.decode('utf-8')
             match = re.match('^.*callback\((.*?)\);?$', data,
                              re.MULTILINE | re.DOTALL)
             data = match.group(1)
@@ -101,22 +96,30 @@ def scrape_ec2_pricing():
                         # Price not available
                         continue
 
-                    if not result['models'][libcloud_region_name].has_key(size['size']):
-                        result['models'][libcloud_region_name][size['size']] = {}
-                        result['models'][libcloud_region_name][size['size']]['CPU'] = int(size['vCPU'])
+                    if not result['models'][libcloud_region_name].__contains__(
+                            size['size']):
+                        result['models'][libcloud_region_name][
+                            size['size']] = {}
+                        result['models'][libcloud_region_name][
+                            size['size']]['CPU'] = int(size['vCPU'])
 
                         if size['ECU'] == 'variable':
                             ecu = 0
                         else:
                             ecu = float(size['ECU'])
 
-                        result['models'][libcloud_region_name][size['size']]['ECU'] = ecu
+                        result['models'][libcloud_region_name][
+                            size['size']]['ECU'] = ecu
 
-                        result['models'][libcloud_region_name][size['size']]['memoryGiB'] = float(size['memoryGiB'])
+                        result['models'][libcloud_region_name][
+                            size['size']]['memoryGiB'] = float(
+                                size['memoryGiB'])
 
-                        result['models'][libcloud_region_name][size['size']]['storageGB'] = size['storageGB']
+                        result['models'][libcloud_region_name][
+                            size['size']]['storageGB'] = size['storageGB']
 
-                    result['prices'][libcloud_region_name][size['size']] = float(price)
+                    result['prices'][libcloud_region_name][
+                        size['size']] = float(price)
 
     return result
 
@@ -160,11 +163,11 @@ def sort_key_by_numeric_other(key_value):
     """
     Split key into numeric, alpha and other part and sort accordingly.
     """
-    return tuple((
-                     int(numeric) if numeric else None,
-                     INSTANCE_SIZES.index(alpha) if alpha in INSTANCE_SIZES else alpha,
-                     other
-                 ) for (numeric, alpha, other) in RE_NUMERIC_OTHER.findall(key_value[0]))
+    return tuple(
+        (int(numeric) if numeric else None,
+         INSTANCE_SIZES.index(alpha) if alpha in INSTANCE_SIZES else alpha,
+         other)
+        for (numeric, alpha, other) in RE_NUMERIC_OTHER.findall(key_value[0]))
 
 
 def main():
