@@ -6960,6 +6960,12 @@
                     "memoryGiB": 384.0,
                     "storageGB": "ebsonly"
                 },
+                "m5a.large": {
+                    "CPU": 2,
+                    "ECU": 0,
+                    "memoryGiB": 8.0,
+                    "storageGB": "ebsonly"
+                },
                 "m5d.large": {
                     "CPU": 2,
                     "ECU": 10.0,
@@ -7108,6 +7114,12 @@
                     "CPU": 8,
                     "ECU": 0,
                     "memoryGiB": 32.0,
+                    "storageGB": "ebsonly"
+                },
+                "t3a.micro": {
+                    "CPU": 2,
+                    "ECU": 0,
+		    "memoryGiB": 1.0,
                     "storageGB": "ebsonly"
                 },
 		"m5d.xlarge": {

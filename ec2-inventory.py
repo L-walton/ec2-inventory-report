@@ -13,7 +13,8 @@ import boto3
 import os
 import re
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from dateutil.parser import parse
 import logging
 from botocore.exceptions import ClientError
 import pprint
@@ -66,6 +67,7 @@ def monitor_cw(instance_id, region):
 
 def monitor_ec2(region):
     # returns row with ec2 details.
+    Now = datetime.now(timezone.utc)
     client = boto3.client('ec2', region_name=region)
     paginator = client.get_paginator('describe_instances')
     response_iterator = paginator.paginate()
@@ -73,123 +75,177 @@ def monitor_ec2(region):
         for obj in page['Reservations']:
             for instance in obj['Instances']:
                 InstanceName = None
+                InstanceStackName = None
                 Platform = "linux"
                 ID = instance['InstanceId']
-                if instance['State']['Name'] != 'terminated':
+                State = instance['State']['Name']
+                LaunchTime = str(instance['LaunchTime'])
+                launch_time = parse(LaunchTime)
+                td = Now - launch_time
+                lt_in_hours = td.total_seconds() // 3600
+                PrivateIP = None
+                PublicIPADDDR = None
+                if State != 'terminated':
                     for tag in instance["Tags"]:
                         try:
                             if tag["Key"] == 'Name':
                                 InstanceName = tag["Value"]
+
+                            if tag["Key"] == 'aws:cloudformation:stack-name':
+                                InstanceStackName = tag["Value"]
+
                         except:
-                            print "Tag Error", instance, tag
-                #get attached volumes
-                # ebsvolumes = list()
-                # bDm = client.describe_instance_attribute(Attribute='blockDeviceMapping', InstanceId=ID)
-                # for B in bDm['BlockDeviceMappings']:
-                #     ebsvolumes.append(B['Ebs']['VolumeId'])
-                PrivateIP = None
-                PublicIPADDDR = None
+                            print("Tag Error", instance, tag)
+                    if InstanceName == None:
+                        InstanceName = instance['PublicDnsName']
+
+                    root_device_type = instance['RootDeviceType']
+                    image_id = instance['ImageId']
 
                 try:
                     ec2 = boto3.resource('ec2', region_name=region)
                 except ClientError as ex:
-                    print 'ec2'
-                    error_message = ex.response['Error']['Message']
-                    print 'setup_resource', error_message
+                    print('ec2')
+                    if ex.response['Error']['Message']:
+                        error_message = ex.response['Error']['Message']
+                        print('setup_resource', error_message)
                 try:
                     InstanceDetails = ec2.Instance(instance['InstanceId'])
                 except ClientError as ex:
-                    print 'InstanceDetails'
-                    error_message = ex.response['Error']['Message']
-                    print 'Instance Details', error_message
+                    print('InstanceDetails')
+                    if ex.response['Error']['Message']:
+                        error_message = ex.response['Error']['Message']
+                        print('Instance Details', error_message)
                 try:
                     ec2vol = list()
                     Volumes = InstanceDetails.volumes.all()
                     volume_ids = [v.id for v in Volumes]
-                    for volume_id in volume_ids:
-                        print volume_id
-                        Vol = ec2.Volume(id=volume_id)
-                        ec2vol.append(Vol.attachments[0][u'Device'])
-                        ec2vol.append(Vol.size)
+                    if volume_ids:
+                        for volume_id in volume_ids:
+                            Vol = ec2.Volume(id=volume_id)
+                            ec2vol.append(Vol.attachments[0][u'Device'])
+                            ec2vol.append(Vol.size)
+                    else:
+                        isii = root_device_type + ': ' + image_id
+                        ec2vol.append(isii)
+
                 except ClientError as ex:
-                    print 'Volume'
-                    error_message = ex.response['Error']['Message']
-                    print 'Instance Volume Details', error_message
+                    print('Volume')
+                    if ex.response['Error']['Message']:
+                        error_message = ex.response['Error']['Message']
+                        print('Instance Volume Details', error_message)
+                if State == 'running':
+                    pprint.pprint(InstanceName)
 
-                print(InstanceName)
+                if State == 'running':
+                    try:
+                        for inet in instance['NetworkInterfaces']:
+                            if 'Association' in inet:
+                                if inet['Association']['PublicIp']:
+                                    PublicIPADDDR = inet['Association']['PublicIp']
 
-                try:
-                    for inet in instance['NetworkInterfaces']:
-                        if 'Association' in inet:
-                            PublicIPADDDR = inet['Association']['PublicIp']
+                            if 'Platform' in instance:
+                                Platform = instance['Platform']
 
-                        if 'Platform' in instance:
-                            Platform = instance['Platform']
+                            if 'PrivateIpAddress' in instance:
+                                PrivateIP = instance['PrivateIpAddress']
+                    except ClientError as ex:
+                        print('NetworkInterfaces')
+                        if ex.response['Error']['Message']:
+                            error_message = ex.response['Error']['Message']
+                            print('Instance NetworkInterface', error_message)
 
-                        if 'PrivateIpAddress' in instance:
+                    if PublicIPADDDR == None:
+                        try:
+                            if instance.get(u'PublicIpAddress'):
+                                PublicIPADDDR = instance.get(u'PublicIpAddress')
+                            else:
+                                PublicIPADDDR = "None"
+                        except ClientError as ex:
+                            print("Received error: %s", ex, exc_info=True)
+                            if ex.response['Error']['Message']:
+                                error_message = ex.response['Error']['Message']
+                                print('Instance PublicIpAddress',
+                                      error_message)
+                            else:
+                                print("Unexpected error: %s" % e)
+                                raise e
+                    if PrivateIP == None:
+                        try:
                             PrivateIP = instance['PrivateIpAddress']
-                except:
-                    error_message = ex.response['Error']['Message']
-                    print 'Instance IP Details', error_message
+                        except ClientError as ex:
+                            print('Instance PrivateIpAddress', ID)
+                            if ex.response['Error']['Message']:
+                                error_message = ex.response['Error']['Message']
+                                print('Instance PrivateIP', error_message)
 
-                if PublicIPADDDR == None:
-                    PublicIPADDDR = instance['PublicIpAddress']
-                    PrivateIP = instance['PrivateIpAddress']
+                if State == 'running':
+                    try:
+                        HW = data['compute']['models'][region][
+                            instance["InstanceType"]]
 
-                try:
+                    except:
+                        print("Error in data", "Name:", InstanceName,
+                              "Region:", region, "Type:",
+                              instance["InstanceType"])
 
-                    # print "Adding:", "Name:", InstanceName, "Region:", region, "Type:", instance["InstanceType"]
-                    HW = data['compute']['models'][region][
-                        instance["InstanceType"]]
-                    #PRICE = data['compute']['prices'][region][instance["InstanceType"]]
+                if State == 'running':
+                    ec2_offer = awspricing.offer('AmazonEC2')
+                    try:
+                        on_demand_price = ec2_offer.ondemand_hourly(
+                            instance["InstanceType"],
+                            operating_system='Linux',
+                            region=region)
+                    except:
+                        print("on demand price error",
+                              instance["InstanceType"], region)
+                        on_demand_price = 0.000
 
-                except:
-                    print "Error in data", "Name:", InstanceName, "Region:", region, "Type:", instance[
-                        "InstanceType"]
+                    try:
+                        reserved_price = ec2_offer.reserved_hourly(
+                            instance["InstanceType"],
+                            operating_system='Linux',
+                            lease_contract_length='3yr',
+                            offering_class='convertible',
+                            purchase_option='Partial Upfront',
+                            region=region)
+                    except:
+                        reserved_price = 0.000
 
-                ec2_offer = awspricing.offer('AmazonEC2')
-                try:
-                    on_demand_price = ec2_offer.ondemand_hourly(
-                        instance["InstanceType"],
-                        operating_system='Linux',
-                        region=region)
-                except:
-                    print "on demand price error", instance[
-                        "InstanceType"], region
-                    on_demand_price = 0.000
+                    if reserved_price != 0.00:
+                        rp_cost_total = round(lt_in_hours * reserved_price, 2)
+                    else:
+                        rp_cost_total = "NA"
 
-                try:
-                    reserved_price = ec2_offer.reserved_hourly(
-                        instance["InstanceType"],
-                        operating_system='Linux',
-                        lease_contract_length='3yr',
-                        offering_class='convertible',
-                        purchase_option='Partial Upfront',
-                        region=region)
-                except:
-                    print "reserved_price error", instance[
-                        "InstanceType"], region
-                    reserved_price = 0.000
+                    if on_demand_price != 0.00:
+                        od_cost_total = round(lt_in_hours * on_demand_price, 2)
+                    else:
+                        od_cost_total = "NA"
 
-                row = list()
-                row.append(instance['Placement']['AvailabilityZone'])
-                row.append(InstanceName)
-                row.append(instance["InstanceId"])
-                row.append(instance["InstanceType"])
-                row.append(Platform)
-                row.append(PublicIPADDDR)
-                row.append(PrivateIP)
-                row.append(instance['State']['Name'])
-                row.append(instance['LaunchTime'])
-                row.append(Account)
-                row.append(HW['CPU'])
-                row.append(monitor_cw(instance["InstanceId"], region))
-                row.append(HW['ECU'])
-                row.append(HW['memoryGiB'])
-                row.append(on_demand_price)
-                row.append(round(reserved_price, 4))
-                row.extend(ec2vol)
-                ws.append(row)
+                if State == 'running':
+                    row = list()
+                    row.append(instance['Placement']['AvailabilityZone'])
+                    row.append(InstanceName)
+                    row.append(InstanceStackName)
+                    row.append(ID)
+                    row.append(instance["InstanceType"])
+                    row.append(Platform)
+                    row.append(PublicIPADDDR)
+                    row.append(PrivateIP)
+                    row.append(State)
+                    row.append(Account)
+                    row.append(HW['CPU'])
+                    row.append(monitor_cw(instance["InstanceId"], region))
+                    row.append(HW['ECU'])
+                    row.append(HW['memoryGiB'])
+                    row.append(round(on_demand_price, 4))
+                    row.append(round(reserved_price, 4))
+                    row.append(LaunchTime)
+                    row.append(od_cost_total)
+                    row.append(rp_cost_total)
+                    row.extend(ec2vol)
+                    ws.append(row)
+
 
 def get_regions():
     """
@@ -218,20 +274,20 @@ def format_xlsx(ws):
                              top=Side(style='thin'),
                              bottom=Side(style='thin'))
     except:
-        print "rows", rows
+        print("rows", rows)
 
     # set wrapText
     try:
         alignment = Alignment(wrap_text=True)
-        for col in ws.iter_cols(min_row=1, min_col=1, max_col=26):
+        for col in ws.iter_cols(min_row=1, min_col=1, max_col=30):
             for cell in col:
                 cell.alignment = alignment
     except:
-        print "col", col
+        print("col", col)
 
 
 # set weight
-    for col in ws.iter_cols(min_row=1, min_col=1, max_col=26):
+    for col in ws.iter_cols(min_row=1, min_col=1, max_col=30):
         max_length = 0
         c = col[0].column
         column = get_column_letter(c)
@@ -244,7 +300,7 @@ def format_xlsx(ws):
                         max_length = ((len(cell.value) + 2) * 1.4) / 2
             except:
                 pass
-        adjusted_width = (max_length + 3)
+        adjusted_width = (max_length + 6)
         ws.column_dimensions[column].width = adjusted_width
 
 
@@ -269,10 +325,11 @@ if __name__ == '__main__':
         # grab the active worksheet
         ws = wb.active
         header = [
-            'Placement', 'Name', 'Instance ID', 'Instance Type', 'Platform',
-            'Public IP', 'Private IP', 'Instance State', 'LaunchTime',
-            'AWS Account', 'CPU', 'CPU Utilization Avg', 'ECU', 'memory GiB',
-            'On demand price', 'Reserved price', 'Volume', 'Size GiB',
+            'Placement', 'Name', 'Instance Stack Name','Instance ID', 'Instance Type', 'Platform',
+            'Public IP', 'Private IP', 'Instance State', 'AWS Account', 'CPU',
+            'CPU Utilization Avg', 'ECU', 'memory GiB', 'On demand price',
+            'Reserved price', 'LaunchTime', 'On demand total',
+            'Reserved total', 'Volume', 'Size GiB', 'Volume', 'Size GiB',
             'Volume', 'Size GiB', 'Volume', 'Size GiB', 'Volume', 'Size GiB',
             'Volume', 'Size GiB'
         ]
@@ -288,7 +345,12 @@ if __name__ == '__main__':
             monitor_ec2(region)
         ws = format_xlsx(ws)
         wb.save("inventory-" + Account + "-" + timestr + ".xlsx")
-    except ClientError as e:
-        logger.error(e)
+    except ClientError as ex:
+        if ex.response['Error']['Message']:
+            error_message = ex.response['Error']['Message']
+            print('Genric Error', error_message)
+            logger.error(error_message)
+
     except Exception as err:
+        print('Exception', err)
         logger.error(err)
